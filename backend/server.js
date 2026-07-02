@@ -12,9 +12,7 @@ const app = express();
 
 // Middleware — allow all localhost ports
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? ['https://your-frontend.vercel.app']
-    : true, // allow ALL origins in development
+  origin: true,
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
